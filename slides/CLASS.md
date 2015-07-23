@@ -104,37 +104,31 @@ The DBMS' configuration is managed the same way as your own data.
 
 ### Normalising Data
 
-![](./img/normalise1.png)
+![](./img/Form_View1.png)
 
 ---
 
 ### Normalising Data - Step 1
 
-![](./img/normalise2.png)
+![](./img/Form_View2.png)
 
 ---
 
 ### Normalising Data - Step 2
 
-![](./img/normalise3.png)
+![](./img/Form_View3.png)
 
 ---
 
 ### Normalising Data - Step 3
 
-![](./img/normalise4.png)
-
----
-
-### Normalising Data - Step 4
-
-![](./img/normalise5.png)
+![](./img/Form_View4.png)
 
 ---
 
 ### Normalising Data - Final
 
-![](./img/normalise6.png)
+![](./img/Form_View5.png)
 
 ---
 
@@ -217,9 +211,34 @@ Running migrations:
 ```
 
 ---
-### Let's play!
 
+### Admin
+
+- Build in Database Admin tool
+- Relies on the DRY principle to infer a lot
+
+
+---
+
+### Adding your models
+
+admin.py
+```
+from django.contrib import admin
+
+# Register your models here.
+from . import models
+
+admin.site.register(models.Entry)
+```
+
+---
+
+### Let's play!
 
 ```
 $ python manage.py shell
 ```
+
+---
+
