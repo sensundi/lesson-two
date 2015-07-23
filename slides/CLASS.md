@@ -19,7 +19,7 @@ Ideally:
 
 ### Overview of Django
 
-![](./img/django-flow.png)
+![](./img/Request_Response.png)
 
 - Request
 - URL patterns
