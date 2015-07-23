@@ -98,7 +98,7 @@ Removes replication of data, avoiding "update anomalies".
 
 Data integrity is enforced by the Database Management System (DBMS).
 
-The DBMS' configuration is managed the same was as your own data.
+The DBMS' configuration is managed the same way as your own data.
 
 ---
 
@@ -140,7 +140,86 @@ The DBMS' configuration is managed the same was as your own data.
 
 ### Models
 
- - Describe our schema
- - DRY
+models.py
+
+```
+    from django.db import models
+
+    # Create your models here.
+```
+
+---
+
+```
+    from django.db import models
+
+    # Create your models here.
+    class Entry(models.Model):
+        start = models.DateTimeField()
+        stop = models.DateTimeField()
+        client = models.CharField()
+        project = models.CharField()
+        description = models.CharField()
+
+```
+
+---
+
+```
+    from django.db import models
+
+    from django.utils import timezone
+
+    # Create your models here.
+    class Entry(models.Model):
+        start = models.DateTimeField(default=timezone.now)
+        stop = models.DateTimeField(blank=True, null=True)
+        client = models.CharField(max_length=200)
+        project = models.CharField(max_length=200)
+        description = models.CharField(max_length=200)
+
+```
+
+---
+
+```
+$ python manage.py makemigrations
+Migrations for 'times':
+  0001_initial.py:
+    - Create model Entry
+
+```
+
+---
+
+```
+$ python manage.py migrate
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles
+  Apply all migrations: times, sessions, contenttypes, admin, auth
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying sessions.0001_initial... OK
+  Applying times.0001_initial... OK
+```
+
+---
+### Let's play!
 
 
+```
+$ python manage.py shell
+```
