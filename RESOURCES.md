@@ -14,3 +14,6 @@
 
 [HAVING a blunderful time]
 (http://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html)
+
+[Django Model Fields]
+(https://docs.djangoproject.com/en/1.8/ref/models/fields/)
