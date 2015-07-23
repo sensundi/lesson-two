@@ -18,7 +18,7 @@ If you did the homework [last week][lesson-one], you should already have a virtu
 - [ ] [Fork this repository][gh-fork]
 - [ ] Clone the repo to your own machine
 - [ ] Normalise the model we created in class by creating new [Django models][dj-models] that better express the
-      relationships. You'll need to add ForeignKey relationships between your models and our existing one.
+      relationships. You'll need to add [ForeignKey relationships][dj-fk] between your models and our existing one.
 - [ ] Update `admin.py` so all your new models show
 
 [gh-fork]: https://help.github.com/articles/fork-a-repo/
