@@ -6,12 +6,14 @@ Introduction to Django "apps"
 
 ###  What is a Web Framework?
 
- - Provides structure for your code
- - Makes common work trivial
- - Lets you focus on the parts special to your project.
+- Provides structure for your code
+- Makes common work trivial
+- Lets you focus on the parts unique to your project
 
-1. Protect you from the __DANGEROUS__ things.
-2. Protect you from the __TEDIOUS__ things.
+Ideally:
+
+1. Protects you from the __DANGEROUS__ things
+2. Protects you from the __TEDIOUS__ things
 
 ---
 
@@ -26,7 +28,7 @@ Introduction to Django "apps"
 
 ---
 
-### Creating an `app`
+### Creating an "app"
 
 ```
     $ ./manage.py startapp times
@@ -56,9 +58,9 @@ Introduction to Django "apps"
 
 What is a Database?
 
-A Collection of data (usually with some structure).
+A Collection of data (usually with some structure)
 
-Database Management System (DBMS) is a program that manages access to and storage of a database.
+A Database Management System (DBMS) is a program that manages access to and storage of a database
 
 ---
 
@@ -71,6 +73,7 @@ Database Management System (DBMS) is a program that manages access to and storag
 - Key:Value
 - Document
 - Relational
+- Graph
 
 ---
 
@@ -80,7 +83,7 @@ Invented in 1969 by Edgar Codd.
 
 Organises data into relvars (tables) of tuples (rows), which contain attributes (columns).
 
-- Tuples within a relvar are unique.
+- Tuples within a relvar are unique
 - Tuples have no inherent ordering
 - Attributes within a Tuple have no inherent ordering
 
@@ -88,17 +91,18 @@ Each tuple is a statement of truth.
 
 Tuples can express their "relation" to other truths.
 
+
 ---
 
 ### Benefits
 
-Users declare the information to store, and what to retrieve, and the DBMS takes care of storage, retrieval, etc.
+- Users declare the information to store, and what to retrieve, and the DBMS takes care of storage, retrieval, etc.
 
-Removes replication of data, avoiding "update anomalies".
+- Removes replication of data, avoiding "update anomalies"
 
-Data integrity is enforced by the Database Management System (DBMS).
+- Data integrity is enforced by the DBMS, not the application
 
-The DBMS' configuration is managed the same way as your own data.
+- The DBMS' configuration is managed the same way as your own data
 
 ---
 
@@ -214,9 +218,8 @@ Running migrations:
 
 ### Admin
 
-- Build in Database Admin tool
-- Relies on the DRY principle to infer a lot
-
+- Built in Database Admin tool
+- Creates forms for your database based on your Models
 
 ---
 
@@ -241,4 +244,3 @@ $ python manage.py shell
 ```
 
 ---
-
