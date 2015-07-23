@@ -1,5 +1,8 @@
 # MelbDjango School - Lesson Two
 
+The slides from the class are available online here:  
+https://melbdjango.github.io/lesson-two/
+
 **Important:** Please take the [survey](https://docs.google.com/a/acommoncreative.com/forms/d/1VKqD1-aVsgztk19kdluNtFyTGiarbV9LgBFi2BwYT-g/viewform?c=0&w=1) if you came to the class today.
 
 ## Displaying the class slides
