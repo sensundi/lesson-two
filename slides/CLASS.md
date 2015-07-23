@@ -31,11 +31,11 @@ Ideally:
 ### Creating an "app"
 
 ```
-    $ ./manage.py startapp times
+    $ ./manage.py startapp entries
     $ tree .
     .
     ├── manage.py
-    ├── times
+    ├── entries
     │   ├── admin.py
     │   ├── __init__.py
     │   ├── migrations
@@ -182,7 +182,7 @@ models.py
 
 ```
 $ python manage.py makemigrations
-Migrations for 'times':
+Migrations for 'entries':
   0001_initial.py:
     - Create model Entry
 
@@ -194,7 +194,7 @@ Migrations for 'times':
 $ python manage.py migrate
 Operations to perform:
   Synchronize unmigrated apps: messages, staticfiles
-  Apply all migrations: times, sessions, contenttypes, admin, auth
+  Apply all migrations: entries, sessions, contenttypes, admin, auth
 Synchronizing apps without migrations:
   Creating tables...
     Running deferred SQL...
@@ -211,7 +211,7 @@ Running migrations:
   Applying auth.0005_alter_user_last_login_null... OK
   Applying auth.0006_require_contenttypes_0002... OK
   Applying sessions.0001_initial... OK
-  Applying times.0001_initial... OK
+  Applying entries.0001_initial... OK
 ```
 
 ---
