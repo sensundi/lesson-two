@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+"""this file was created using the following command: 
+    python manage.py makemigrations --empty historical_data"""
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+
+"""This method insert_data is used to add data to Client model 
+using the information from model Project"""
+def insert_data(apps, schema_editor):
+    Project = apps.get_model('entries', 'Project')
+    Client = apps.get_model('entries', 'Client')
+
+    # create query_set object to filter entries without client
+    #query_set = Project.objects.filter(client)
+
+    for project in Project.objects.all():
+        # Get the client name from project model and update
+        # the name attribute of client
+        client = Client(name=project.client)
+        client.save()
+
+        # Once saved, map the client to project
+        project.client_id = client
+        project.save()
+    
+    
+    
+
+class Migration(migrations.Migration):
+    """This migration class aids to move client specific data from 
+    Project model to Client model"""
+    dependencies = [
+        ('entries', '0002_auto_20150727_0214'),
+    ]
+
+    operations = [
+        # Use runpython and pass a method to retrieve data from 
+        # project into client
+        migrations.RunPython(insert_data),
+        # Remove the field client from project model
+        migrations.RemoveField(model_name="Project",name="client")
+    ]
